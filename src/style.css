@@ -1,0 +1,74 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 16px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: rgb(20, 20, 20);
+}
+
+body {
+  background-color: rgb(227, 227, 227);
+  padding: 5vw 10vw;
+}
+
+div.container {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  grid-template-rows: min-content 1fr;
+  column-gap: 20px;
+  row-gap: 30px;
+}
+
+div.container > h1 {
+  padding: 25px;
+  font-size: 2.5rem;
+}
+
+h1 > span {
+  font-size: 4rem;
+  margin-right: 15px;
+  vertical-align: sub;
+}
+
+div.user-input {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background-color: rgba(249, 249, 249, 0.53);
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 2px 1px 5px rgb(94, 94, 94);
+}
+
+div.user-input > label {
+  font-size: 1.7rem;
+  font-weight: 600;
+}
+
+div.user-input > input {
+  flex: 1;
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 1.2rem;
+  padding: 6px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.427);
+  box-shadow: 1px 1px 5px rgb(186, 186, 186);
+}
+
+div.user-input > button#get-weather {
+  font-family: inherit;
+  color: rgb(20, 20, 20);
+  font-weight: 600;
+  background-color: #629acbb0;
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.427);
+  font-size: 1.2rem;
+  box-shadow: 1px 1px 5px rgb(186, 186, 186);
+}
