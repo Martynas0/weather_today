@@ -8,7 +8,24 @@ const display = (function () {
   const locationDisplay = document.querySelector(
     "div.result-container > h2 > span"
   );
+  const toggleTempBtn = document.querySelector("button#toggle-temp");
+  const displayUnitIcon = document.querySelector("h3 > span");
+
   let showCelcius = true;
+  let currentLocationShowing = "Manchester";
+
+  const toggleTempUnits = () => {
+    if (showCelcius) {
+      showCelcius = false;
+      displayUnitIcon.setAttribute("class", "mdi mdi-temperature-fahrenheit");
+    } else {
+      showCelcius = true;
+      displayUnitIcon.setAttribute("class", "mdi mdi-temperature-celsius");
+    }
+    api
+      .fetchData(showCelcius, currentLocationShowing)
+      .then((response) => displayWeather(response));
+  };
 
   const handleForm = (e) => {
     e.preventDefault();
@@ -16,6 +33,7 @@ const display = (function () {
     api
       .fetchData(showCelcius, location)
       .then((response) => displayWeather(response));
+    e.target.reset();
   };
 
   const displayWeather = (weatherData) => {
@@ -26,7 +44,8 @@ const display = (function () {
   };
 
   const displayLocation = (location) => {
-    locationDisplay.textContent = location;
+    currentLocationShowing = location;
+    locationDisplay.textContent = currentLocationShowing;
   };
 
   const displayTemp = (weatherData) => {
@@ -90,4 +109,5 @@ const display = (function () {
   };
 
   userInputForm.addEventListener("submit", handleForm);
+  toggleTempBtn.addEventListener("click", toggleTempUnits);
 })();
