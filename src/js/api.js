@@ -39,5 +39,7 @@ export const api = (function () {
     }
   };
 
+  fetchData("uk");
+  fetchData("us");
   return { fetchData };
 })();

@@ -72,3 +72,8 @@ div.user-input > button#get-weather {
   font-size: 1.2rem;
   box-shadow: 1px 1px 5px rgb(186, 186, 186);
 }
+
+div.user-input > button#get-weather:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}

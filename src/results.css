@@ -33,6 +33,27 @@ div.result-container > div > h3 {
   margin-left: 25px;
 }
 
+div.result-temp > div.result-temp-heading {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 25px;
+}
+
+button#toggle-temp {
+  font-family: inherit;
+  padding: 3px 6px;
+  border: none;
+  background-color: #629acbb0;
+  border-radius: 6px;
+  font-weight: 600;
+  box-shadow: 1px 1px 3px rgb(118, 118, 118);
+}
+
+button#toggle-temp:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
 div.result-container > div > ul {
   list-style-type: none;
   display: flex;
