@@ -35,7 +35,7 @@ h1 > span {
   vertical-align: sub;
 }
 
-div.user-input {
+form.user-input {
   display: flex;
   align-items: center;
   gap: 15px;
@@ -45,12 +45,12 @@ div.user-input {
   box-shadow: 2px 1px 5px rgb(94, 94, 94);
 }
 
-div.user-input > label {
+form.user-input > label {
   font-size: 1.7rem;
   font-weight: 600;
 }
 
-div.user-input > input {
+form.user-input > input {
   flex: 1;
   font-family: inherit;
   font-weight: 600;
@@ -61,7 +61,7 @@ div.user-input > input {
   box-shadow: 1px 1px 5px rgb(186, 186, 186);
 }
 
-div.user-input > button#get-weather {
+form.user-input > button#get-weather {
   font-family: inherit;
   color: rgb(20, 20, 20);
   font-weight: 600;
@@ -73,7 +73,7 @@ div.user-input > button#get-weather {
   box-shadow: 1px 1px 5px rgb(186, 186, 186);
 }
 
-div.user-input > button#get-weather:hover {
+form.user-input > button#get-weather:hover {
   opacity: 0.8;
   cursor: pointer;
 }

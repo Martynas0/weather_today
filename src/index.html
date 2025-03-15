@@ -12,11 +12,13 @@
   <body>
     <div class="container">
       <h1><span class="mdi mdi-weather-cloudy"></span>Weather today.</h1>
-      <div class="user-input">
+
+      <form class="user-input">
         <label for="location">Location</label>
-        <input type="text" id="location" name="location" />
+        <input type="text" id="location" name="location" required />
         <button id="get-weather">See weather</button>
-      </div>
+      </form>
+
       <div class="result-container">
         <h2>Showing weather for <span>Manchester</span></h2>
         <div class="result-temp">
@@ -29,7 +31,7 @@
           </div>
           <ul>
             <li>
-              <span>0</span>
+              <span>0&degC</span>
               <hr />
               <span>12:00</span>
             </li>

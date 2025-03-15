@@ -22,11 +22,12 @@ export const api = (function () {
     });
 
     twelveHours = twelveHours.slice(startIndex, startIndex + 12);
-    return twelveHours;
+    return { loc: data.resolvedAddress, twelveHours };
   };
 
   const fetchData = async (unit, location) => {
     location = location ? location : "Manchester";
+    unit = unit ? "uk" : "us";
     const url = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}/next12hours?unitGroup=${unit}&key=${apiKey}&include=hours&elements=temp,humidity,windspeed,datetime`;
 
     try {
@@ -39,7 +40,5 @@ export const api = (function () {
     }
   };
 
-  fetchData("uk");
-  fetchData("us");
   return { fetchData };
 })();
