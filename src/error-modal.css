@@ -1,0 +1,46 @@
+dialog {
+  inset: 0.5rem;
+  margin: auto;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 2px 3px 5px black;
+}
+
+dialog > div.error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 25px;
+}
+
+.mdi-alert-circle-outline {
+  font-size: 2rem;
+  color: rgb(197, 20, 20);
+}
+
+div.error > h4 {
+  font-size: 2rem;
+  color: rgba(0, 0, 0, 0.655);
+}
+
+div.error > button {
+  margin-top: 15px;
+  padding: 4px 8px;
+  border: none;
+  background-color: mediumseagreen;
+  border-radius: 6px;
+  box-shadow: 1px 1px 3px black;
+  font-weight: 600;
+  font-size: 1.4rem;
+  color: rgba(0, 0, 0, 0.792);
+}
+
+div.error > button:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+dialog::backdrop {
+  background-color: black;
+  opacity: 0.6;
+}

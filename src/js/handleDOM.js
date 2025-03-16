@@ -10,9 +10,17 @@ const display = (function () {
   );
   const toggleTempBtn = document.querySelector("button#toggle-temp");
   const displayUnitIcon = document.querySelector("h3 > span");
+  const errorModal = document.querySelector("#error-modal");
 
   let showCelcius = true;
   let currentLocationShowing = "Manchester";
+
+  const showLoadingSpinner = (container) => {
+    container.textContent = "";
+    const div = document.createElement("div");
+    div.classList.add("loading");
+    container.append(div);
+  };
 
   const toggleTempUnits = () => {
     if (showCelcius) {
@@ -25,6 +33,8 @@ const display = (function () {
     api
       .fetchData(showCelcius, currentLocationShowing)
       .then((response) => displayWeather(response));
+
+    showLoadingSpinner(tempDisplay);
   };
 
   const handleForm = (e) => {
@@ -32,7 +42,18 @@ const display = (function () {
     const location = e.target[0].value;
     api
       .fetchData(showCelcius, location)
-      .then((response) => displayWeather(response));
+      .then((response) => displayWeather(response))
+      .catch((err) => {
+        errorModal.showModal();
+        api
+          .fetchData(showCelcius, currentLocationShowing)
+          .then((response) => displayWeather(response));
+      });
+
+    showLoadingSpinner(windDisplay);
+    showLoadingSpinner(humidityDisplay);
+    showLoadingSpinner(locationDisplay);
+    showLoadingSpinner(tempDisplay);
     e.target.reset();
   };
 
@@ -52,7 +73,7 @@ const display = (function () {
     while (tempDisplay.firstChild) {
       tempDisplay.removeChild(tempDisplay.lastChild);
     }
-    console.log(weatherData);
+
     const nodeList = weatherData.map((item) => {
       const li = document.createElement("li");
       const temp = document.createElement("span");
@@ -72,7 +93,7 @@ const display = (function () {
     while (windDisplay.firstChild) {
       windDisplay.removeChild(windDisplay.lastChild);
     }
-    console.log(weatherData);
+
     const nodeList = weatherData.map((item) => {
       const li = document.createElement("li");
       const wind = document.createElement("span");
@@ -92,7 +113,7 @@ const display = (function () {
     while (humidityDisplay.firstChild) {
       humidityDisplay.removeChild(humidityDisplay.lastChild);
     }
-    console.log(weatherData);
+
     const nodeList = weatherData.map((item) => {
       const li = document.createElement("li");
       const humidity = document.createElement("span");
@@ -110,4 +131,12 @@ const display = (function () {
 
   userInputForm.addEventListener("submit", handleForm);
   toggleTempBtn.addEventListener("click", toggleTempUnits);
+  errorModal.addEventListener("click", (e) => {
+    if (e.target.id === "close-error") errorModal.close();
+  });
+
+  // Initial load
+  api
+    .fetchData(showCelcius, currentLocationShowing)
+    .then((response) => displayWeather(response));
 })();

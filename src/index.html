@@ -11,6 +11,14 @@
     <link rel="icon" type="image/x-icon" href="./favicon.png" />
   </head>
   <body>
+    <dialog id="error-modal">
+      <div class="error">
+        <span class="mdi mdi-alert-circle-outline"></span>
+        <h4>Location not found...</h4>
+        <button id="close-error">Close</button>
+      </div>
+    </dialog>
+
     <div class="container">
       <h1><span class="mdi mdi-weather-cloudy"></span>Weather today.</h1>
 
@@ -21,7 +29,9 @@
       </form>
 
       <div class="result-container">
-        <h2>Showing weather for <span>Manchester</span></h2>
+        <h2>
+          Showing weather for <span><div class="loading"></div></span>
+        </h2>
         <div class="result-temp">
           <div class="result-temp-heading">
             <h3>Temperature</h3>
@@ -31,196 +41,19 @@
             </h3>
           </div>
           <ul>
-            <li>
-              <span>0</span>
-              <hr />
-              <span>12:00</span>
-            </li>
-            <li>
-              <span>0</span>
-              <hr />
-              <span>12:00</span>
-            </li>
-            <li>
-              <span>0</span>
-              <hr />
-              <span>12:00</span>
-            </li>
-            <li>
-              <span>0</span>
-              <hr />
-              <span>12:00</span>
-            </li>
-            <li>
-              <span>0</span>
-              <hr />
-              <span>12:00</span>
-            </li>
-            <li>
-              <span>0</span>
-              <hr />
-              <span>12:00</span>
-            </li>
-            <li>
-              <span>0</span>
-              <hr />
-              <span>12:00</span>
-            </li>
-            <li>
-              <span>0</span>
-              <hr />
-              <span>12:00</span>
-            </li>
-            <li>
-              <span>0</span>
-              <hr />
-              <span>12:00</span>
-            </li>
-            <li>
-              <span>0</span>
-              <hr />
-              <span>12:00</span>
-            </li>
-            <li>
-              <span>0</span>
-              <hr />
-              <span>12:00</span>
-            </li>
-            <li>
-              <span>0</span>
-              <hr />
-              <span>12:00</span>
-            </li>
+            <div class="loading"></div>
           </ul>
         </div>
         <div class="result-wind">
           <h3>Wind</h3>
           <ul>
-            <li>
-              <span>0</span>
-              <hr />
-              <span>12:00</span>
-            </li>
-            <li>
-              <span>0</span>
-              <hr />
-              <span>12:00</span>
-            </li>
-            <li>
-              <span>0</span>
-              <hr />
-              <span>12:00</span>
-            </li>
-            <li>
-              <span>0</span>
-              <hr />
-              <span>12:00</span>
-            </li>
-            <li>
-              <span>0</span>
-              <hr />
-              <span>12:00</span>
-            </li>
-            <li>
-              <span>0</span>
-              <hr />
-              <span>12:00</span>
-            </li>
-            <li>
-              <span>0</span>
-              <hr />
-              <span>12:00</span>
-            </li>
-            <li>
-              <span>0</span>
-              <hr />
-              <span>12:00</span>
-            </li>
-            <li>
-              <span>0</span>
-              <hr />
-              <span>12:00</span>
-            </li>
-            <li>
-              <span>0</span>
-              <hr />
-              <span>12:00</span>
-            </li>
-            <li>
-              <span>0</span>
-              <hr />
-              <span>12:00</span>
-            </li>
-            <li>
-              <span>0</span>
-              <hr />
-              <span>12:00</span>
-            </li>
+            <div class="loading"></div>
           </ul>
         </div>
         <div class="result-humid">
           <h3>Humidity</h3>
           <ul>
-            <li>
-              <span>0</span>
-              <hr />
-              <span>12:00</span>
-            </li>
-            <li>
-              <span>0</span>
-              <hr />
-              <span>12:00</span>
-            </li>
-            <li>
-              <span>0</span>
-              <hr />
-              <span>12:00</span>
-            </li>
-            <li>
-              <span>0</span>
-              <hr />
-              <span>12:00</span>
-            </li>
-            <li>
-              <span>0</span>
-              <hr />
-              <span>12:00</span>
-            </li>
-            <li>
-              <span>0</span>
-              <hr />
-              <span>12:00</span>
-            </li>
-            <li>
-              <span>0</span>
-              <hr />
-              <span>12:00</span>
-            </li>
-            <li>
-              <span>0</span>
-              <hr />
-              <span>12:00</span>
-            </li>
-            <li>
-              <span>0</span>
-              <hr />
-              <span>12:00</span>
-            </li>
-            <li>
-              <span>0</span>
-              <hr />
-              <span>12:00</span>
-            </li>
-            <li>
-              <span>0</span>
-              <hr />
-              <span>12:00</span>
-            </li>
-            <li>
-              <span>0</span>
-              <hr />
-              <span>12:00</span>
-            </li>
+            <div class="loading"></div>
           </ul>
         </div>
       </div>

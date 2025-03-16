@@ -37,6 +37,7 @@ export const api = (function () {
       return cleanData(result);
     } catch (err) {
       console.error(err);
+      return err;
     }
   };
 
